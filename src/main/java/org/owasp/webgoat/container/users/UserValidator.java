@@ -5,6 +5,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 /**
  * @author nbaars
  * @since 3/19/17.
@@ -27,7 +29,7 @@ public class UserValidator implements Validator {
     if (userRepository.findByUsername(userForm.getUsername()) != null) {
       errors.rejectValue("username", "username.duplicate");
     }
-
+      
     if (!userForm.getMatchingPassword().equals(userForm.getPassword())) {
       errors.rejectValue("matchingPassword", "password.diff");
     }
