@@ -30,8 +30,7 @@ public class UserValidator implements Validator {
       errors.rejectValue("username", "username.duplicate");
     }
       
-    BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();  
-    if (!encoder.matches(userForm.getMatchingPassword(), userForm.getPassword())) {
+    if (!userForm.getMatchingPassword().equals(userForm.getPassword())) {
       errors.rejectValue("matchingPassword", "password.diff");
     }
   }
