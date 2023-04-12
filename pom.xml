@@ -136,13 +136,7 @@
     <pmd.version>3.15.0</pmd.version>
     <!-- Use UTF-8 Encoding -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-      
-      
-    <sonar.organization>bbon1</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-      
-      
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>    
     <thymeleaf.version>3.0.15.RELEASE</thymeleaf.version>
     <webdriver.version>5.3.2</webdriver.version>
     <webgoat.port>8080</webgoat.port>
@@ -152,6 +146,12 @@
     <xstream.version>1.4.5</xstream.version>
     <!-- do not update necessary for lesson -->
     <zxcvbn.version>1.5.2</zxcvbn.version>
+      
+    <sonar.moduleKey>${project.groupId}:${project.artifactId}</sonar.moduleKey>
+    <skipTests>true</skipTests>
+    <sonar.organization>bbon1</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+      
   </properties>
 
   <dependencyManagement>
